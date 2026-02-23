@@ -1,0 +1,1 @@
+ // cout<<isSorted(arr2,5,0)<<endl;
