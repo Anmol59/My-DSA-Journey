@@ -23,7 +23,7 @@ class List{
 
 };
 int main(){
-    List ll();
+    List ll;
 
     
     return 0;
