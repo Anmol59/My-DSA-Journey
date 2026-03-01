@@ -87,7 +87,42 @@ class List{
         tail=temp;
 
     }
-    
+    int searchItr(int key){
+        Node* temp=head;
+        int idx=0;
+        while(temp!=NULL){
+            if(temp->data==key){
+                return idx;
+            }
+            temp =temp->next;
+            idx++;
+            
+        }
+        return -1;
+        
+    }
+int helper(Node* temp,int key){
+    if(temp == NULL ){
+        return -1;
+    }
+
+
+    if(temp->data==key){
+        return 0;
+    }
+     int idx=helper(temp->next,key);
+
+     if(idx==-1){
+        return -1;
+     }
+     return idx+1;
+}
+    int searchRec(int key ){
+      return  helper(head,key);
+
+    }
+
+
 
 };
 int main(){
@@ -102,7 +137,7 @@ int main(){
     ll.pop_back();
 
     ll.printLL();
-   
+    cout<<ll.searchRec(3)<<endl;
     
     return 0;
 }
