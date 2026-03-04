@@ -1,0 +1,37 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+//implementation of stack usin vector
+class Stack{
+    vector<int>vec;
+    public:
+     void push(int val){ //o(1)
+        vec.push_back(val);
+    }
+
+    void pop(){//o(1)
+        vec.pop_back();
+    }
+
+    int top(){//o(1)
+        int lastIndex= vec.size()-1;
+        return vec[lastIndex];
+    }
+
+
+};
+
+
+
+int main(){
+    Stack s;
+    s.push(3);
+    s.push(2);
+
+    s.pop();
+    s.top();
+
+    
+    return 0;
+}
