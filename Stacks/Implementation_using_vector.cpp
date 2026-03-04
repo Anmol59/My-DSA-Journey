@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-//implementation of stack usin vector
+//implementation of stack using vector
 class Stack{
     vector<int>vec;
     public:
@@ -11,14 +11,25 @@ class Stack{
     }
 
     void pop(){//o(1)
+        if(isEmpty()){
+            cout<<"stack is empty\n";
+            return;     
+        }
         vec.pop_back();
     }
 
     int top(){//o(1)
+         if(isEmpty()){
+            cout<<"stack is empty\n";
+            return -1;     
+        }
         int lastIndex= vec.size()-1;
         return vec[lastIndex];
     }
 
+    bool isEmpty(){
+         return vec.size()==0;
+    }
 
 };
 
@@ -28,9 +39,12 @@ int main(){
     Stack s;
     s.push(3);
     s.push(2);
+    s.push(1);
 
-    s.pop();
-    s.top();
+    while(!s.isEmpty()){
+        cout<<s.top()<<" ";
+        s.pop();
+    }
 
     
     return 0;
