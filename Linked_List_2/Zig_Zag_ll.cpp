@@ -71,7 +71,7 @@ class Node{
     }
 
     Node*  reverse(Node* head){
-        Node* prev=NULL;
+        Node* prev=NULL; 
         Node* curr=head;
         Node* next=NULL;
 
