@@ -1,3 +1,0 @@
-  q.front();
-     q.printQueue();
-
