@@ -6,27 +6,35 @@ class Stack{
     deque<int> deq;
     public:
     void push(int data){
-        // deq.push_back();
-        deq.push_front(data);
+        deq.push_back(data);
+        // deq.push_front(data);
     }
 
     void pop(){
-        deq.pop_front();
-    //     deq.pop_back();
+    //     deq.pop_front();
+        deq.pop_back();
     }
     int front(){
-        return deq.front();
+        // return deq.front();
+        return deq.back();
     }
     bool empty(){
         return deq.empty();
     }
-    void printStack(){
-            for(int i = 0; i < deq.size(); i++){
+    void printStack(){ 
+        for(int i = deq.size() - 1; i >= 0; i--){   /// for back 
             cout<<deq[i]<<" ";
         }
         cout<<endl;
+
+
+    //     for(int i = 0; i < deq.size(); i++){    for front 
+    //         cout<<deq[i]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
     }
-    
+     
 
 
 };
